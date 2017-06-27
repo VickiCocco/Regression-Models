@@ -1,0 +1,255 @@
+---
+title: "Regression Analysis Course Project"
+author: "Vicki Cocco"
+date: "June 24, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## R Markdown
+
+---
+## Synopsis: 
+
+> Part 2: Basic Inferential Data Analysis Instructionsless 
+> 
+
+
+### Requirement 2. Provide some a basic summary of the data.
+
+#### Organizing the required R libraries
+```{r, echo = TRUE, results='hide', message=FALSE, warning=FALSE}
+
+        install.packages('dtplyr', repos="http://cran.rstudio.com/")
+        library(dtplyr)
+        install.packages('dplyr', repos="http://cran.rstudio.com/")
+        library(dplyr)
+        install.packages('ggplot2', repos="http://cran.rstudio.com/")
+        library(ggplot2)        
+
+```
+
+### Data Exploratory and Modifications 
+
+#### Example of the Raw Data after forming it to a table data structure
+
+```{r, echo =TRUE, message=FALSE, cache=TRUE}
+
+        # using the mtcars dataset from R
+        # extracting the data used for analysis and organizing factor variables
+        mpg <- mtcars$mpg
+        transtype <- mtcars$am
+        gears <-(mtcars$gear)
+        dtCars <- cbind(mpg, transtype)
+        dtCars <- cbind(dtCars, gears)
+        dtCars <- tbl_df(dtCars)
+        dtCars$gears <- as.factor(dtCars$gears)
+        
+        dtCars <- dtCars %>%
+                select(mpg, gears) %>%
+                mutate(Transmission = ifelse(transtype == 0, "Automatic", "Manual"))
+        
+        dtCars$Transmission <- as.factor(dtCars$Transmission)
+        
+        dtManCars <- filter(dtCars, Transmission == "Manual")
+        dtAutoCars <- filter(dtCars, Transmission == "Automatic")
+        
+        rm(mpg, gears, transtype)
+        
+```
+
+
+
+
+```{r, echo = TRUE, message=FALSE}
+        
+        knitr::kable(head(dtCars))
+        
+        knitr::kable(head(dtManCars))
+        
+        knitr::kable(head(dtAutoCars))
+
+```
+
+#### Showing the first regression analysis - MPG against both types of transmissions
+#### All cars.
+
+
+```{r, echo = TRUE, message=FALSE}
+
+        fitAll <- lm(mpg ~ Transmission, dtCars)
+
+        print(summary(fitAll))
+        
+```
+
+#### Showing the first plot - MPG against both types of transmissions
+#### All cars.
+
+```{r, echo = TRUE, message=TRUE, fig.width=10, fig.height=8}
+
+        fitAll <- ggplot(dtCars, aes(x = Transmission,  
+                                        y = mpg,
+                                        fill = Transmission))
+        fitAll <- fitAll + geom_point(size = 4,
+                                        shape=21,
+                                        colour = "black")
+        fitAll <- fitAll + geom_abline(intercept = coef(fitAll)[1],
+                                        slope = coef(fitAll)[2],
+                                        size = 1,
+                                        color = "darkblue")
+        fitAll <- fitAll + labs(x = "Automatic / Manual Transmission" ,
+                                y = "Miles Per Gallon (US)", 
+                                title = "Transmission Type vs MPG")
+        fitAll <- fitAll + theme(plot.title=element_text(size=14, 
+                                                       hjust=0.5, 
+                                                       face="bold", 
+                                                       colour="darkorchid4", 
+                                                       vjust=-1),                                                        panel.grid.major = element_line(colour = "grey39"), 
+                                panel.grid.minor = element_line(colour = "grey24"),
+                                panel.background = element_blank(),
+                                legend.position = "none")
+        plot(fitAll)
+
+```
+
+#### Showing the second regression analysis - MPG against gears manual transmissions
+
+
+```{r, echo = TRUE, message=FALSE}
+
+        fitManGears <- lm(mpg ~ gears, dtAutoCars)
+       
+        print(summary(fitManGears))
+```
+
+#### Showing the second plot - MPG against gears of manual transmissions
+
+```{r, echo = TRUE, message=FALSE, fig.width=10, fig.height=8}
+
+        fitManGears <- ggplot(dtManCars, aes(x = gears, 
+                                        y = mpg,
+                                        fill = gears))
+        fitManGears <- fitManGears + geom_point(size = 3,
+                                    shape=21,
+                                    colour = "black")
+        fitManGears <- fitAutoGears + geom_abline(intercept = coef(fitManGears)[1],
+                                                   slope = coef(fitManGears)[2],
+                                                   size = 1,
+                                                   color = "darkblue")
+        fitManGears <- fitManGears + labs(x = "Number of Forward Gears" ,
+                              y = "Miles Per Gallon (US)", 
+                              title = "Manual Transmission # Forward Gears vs MPG")
+        fitManGears <- fitManGears + theme(plot.title=element_text(size=14, 
+                                                       hjust=0.5, 
+                                                       face="bold", 
+                                                       colour="darkorchid4", 
+                                                       vjust=-1),                                                          panel.grid.major = element_line(colour = "grey39"), 
+                               panel.grid.minor = element_line(colour = "grey24"),
+                               panel.background = element_blank(),
+                               legend.position = "none")
+        plot(fitManGears)
+
+
+```
+
+#### Showing the third regression analysis - MPG against gears automatic transmissions
+
+```{r, echo = TRUE, message=FALSE}
+
+        fitAutoGears <- lm(mpg ~ gears, dtAutoCars)
+       
+        print(summary(fitAutoGears))
+```
+
+#### Showing the third plot - MPG against gears of automatic transmissions
+
+```{r, echo = TRUE, message=FALSE, fig.width=10, fig.height=8}
+
+
+        fitAutogears <- ggplot(dtAutoCars, aes(x = gears, 
+                                    y = mpg,
+                                    fill = gears))
+        fitAutogears <- fitAutogears + geom_point(size = 3,
+                                    shape=21,
+                                    colour = "black")
+        fitAutogears <- fitAutogears + geom_abline(intercept = coef(fitAutogears)[1],
+                                slope = coef(fitAutogears)[2],
+                                size = 1,
+                                color = "darkblue")
+        fitAutogears <- fitAutogears + labs(x = "Number of Forward Gears" ,
+                                y = "Miles Per Gallon (US)", 
+                                title = "Automatic Transmission # Forward Gears vs MPG")
+        fitAutogears <- fitAutogears + theme(plot.title=element_text(size=14, 
+                                                       hjust=0.5, 
+                                                       face="bold", 
+                                                       colour="darkorchid4", 
+                                                       vjust=-1),                                                       panel.grid.major = element_line(colour = "grey39"), 
+                               panel.grid.minor = element_line(colour = "grey24"),
+                               panel.background = element_blank(),
+                               legend.position = "none")
+        
+        plot(fitAutogears)
+
+```
+
+#### Showing the fourth regression analysis - MPG against gears automatic transmissions
+
+```{r, echo = TRUE, message=FALSE}
+
+        fitAllGears <- lm(mpg ~ gears, dtCars)
+       
+        print(summary(fitAllGears))
+```
+
+#### Showing the third plot - MPG against gears of automatic transmissions
+
+```{r, echo = FALSE, message=FALSE, fig.width=10, fig.height=8}
+
+        fitAllGears <- ggplot(dtCars, aes(x = gears, 
+                                                y = mpg,
+                                                fill = Transmission))
+        fitAllGears <- fitAllGears + geom_point(size = 3,
+                                                shape=21,
+                                                colour = "black")
+        fitAllGears <- fitAllGears + geom_abline(intercept = coef(fitAllGears)[1],
+                                                   slope = coef(fitAllGears)[2],
+                                                   size = 1,
+                                                   color = "darkblue")
+        fitAllGears <- fitAllGears + labs(x = "Number of Forward Gears" ,
+                                        y = "Miles Per Gallon (US)", 
+                                        title = "Number of Forward Gears vs MPG")
+        fitAllGears <- fitAllGears + theme(plot.title=element_text(size=14, 
+                                                       hjust=0.5, 
+                                                       face="bold", 
+                                                       colour="darkorchid4", 
+                                                       vjust=-1),                                                       panel.grid.major = element_line(colour = "grey39"), 
+                             panel.grid.minor = element_line(colour = "grey24"),
+                             panel.background = element_blank())
+                            
+        plot(fitAllGears)
+```
+
+### Fourth Hypothesis
+#### H_0 - Status Quo Toothgrowth Length
+#### H_a - A Dose of 1, through either delivery method, improves tooth growth
+#### T-Test Length ~ Dose @ 2
+#### Outcome : The p-value is small showing that it is unlikely these results would be
+#### obtained without the impact of the dose.
+#### The alternative hypothesis should be accepted.
+
+```{r, echo = FALSE, message=FALSE}
+        #tblNull2 <- filter(tblNull, Dose != 2)
+        #tblDose2 <- filter(tblDose, Dose == 2)
+        #print(t.test(tblNull2$Length, tblDose2$Length))
+
+```
+### Conclusions:
+### The delivery method of Vitamin C has no impact on tooth growth.
+### The dose level of Vitamin C has varying impacts, with the dose level of 
+### 2.0 mg/day having the greatest improvement on tooth growth.
