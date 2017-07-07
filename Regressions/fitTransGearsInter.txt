@@ -1,0 +1,45 @@
+
+Call:
+lm(formula = mpg ~ factor(Transmission) * factor(gears), data = dtCars)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-6.3800 -3.3062 -0.7567  3.1575  9.0200 
+
+Coefficients: (2 not defined because of singularities)
+                                          Estimate
+(Intercept)                               16.10667
+factor(Transmission)Manual                 5.22500
+factor(gears)4                             4.94333
+factor(gears)5                             0.04833
+factor(Transmission)Manual:factor(gears)4       NA
+factor(Transmission)Manual:factor(gears)5       NA
+                                          Std. Error
+(Intercept)                                  1.16497
+factor(Transmission)Manual                   2.76296
+factor(gears)4                               2.53899
+factor(gears)5                               3.61422
+factor(Transmission)Manual:factor(gears)4         NA
+factor(Transmission)Manual:factor(gears)5         NA
+                                          t value Pr(>|t|)
+(Intercept)                                13.826 4.92e-14
+factor(Transmission)Manual                  1.891   0.0690
+factor(gears)4                              1.947   0.0616
+factor(gears)5                              0.013   0.9894
+factor(Transmission)Manual:factor(gears)4      NA       NA
+factor(Transmission)Manual:factor(gears)5      NA       NA
+                                             
+(Intercept)                               ***
+factor(Transmission)Manual                .  
+factor(gears)4                            .  
+factor(gears)5                               
+factor(Transmission)Manual:factor(gears)4    
+factor(Transmission)Manual:factor(gears)5    
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.512 on 28 degrees of freedom
+Multiple R-squared:  0.4938,	Adjusted R-squared:  0.4396 
+F-statistic: 9.105 on 3 and 28 DF,  p-value: 0.0002282
+

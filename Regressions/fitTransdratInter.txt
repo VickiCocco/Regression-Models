@@ -1,0 +1,197 @@
+
+Call:
+lm(formula = mpg ~ factor(Transmission) * factor(drat), data = dtCars)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-9.0500 -0.1833  0.0000  0.0250  9.0500 
+
+Coefficients: (22 not defined because of singularities)
+                                              Estimate
+(Intercept)                                  1.680e+01
+factor(Transmission)Manual                   1.360e+01
+factor(drat)2.93                            -6.400e+00
+factor(drat)3                               -6.400e+00
+factor(drat)3.07                            -5.000e-01
+factor(drat)3.08                             3.500e+00
+factor(drat)3.15                             1.500e-01
+factor(drat)3.21                            -2.500e+00
+factor(drat)3.23                            -2.100e+00
+factor(drat)3.54                            -1.540e+01
+factor(drat)3.62                            -1.070e+01
+factor(drat)3.69                             7.600e+00
+factor(drat)3.7                              4.700e+00
+factor(drat)3.73                            -3.500e+00
+factor(drat)3.77                            -2.562e-15
+factor(drat)3.85                            -7.600e+00
+factor(drat)3.9                             -9.400e+00
+factor(drat)3.92                             3.133e+00
+factor(drat)4.08                            -5.500e-01
+factor(drat)4.11                            -9.000e+00
+factor(drat)4.22                            -5.550e+00
+factor(drat)4.43                            -4.400e+00
+factor(drat)4.93                                    NA
+factor(Transmission)Manual:factor(drat)2.93         NA
+factor(Transmission)Manual:factor(drat)3            NA
+factor(Transmission)Manual:factor(drat)3.07         NA
+factor(Transmission)Manual:factor(drat)3.08         NA
+factor(Transmission)Manual:factor(drat)3.15         NA
+factor(Transmission)Manual:factor(drat)3.21         NA
+factor(Transmission)Manual:factor(drat)3.23         NA
+factor(Transmission)Manual:factor(drat)3.54         NA
+factor(Transmission)Manual:factor(drat)3.62         NA
+factor(Transmission)Manual:factor(drat)3.69         NA
+factor(Transmission)Manual:factor(drat)3.7          NA
+factor(Transmission)Manual:factor(drat)3.73         NA
+factor(Transmission)Manual:factor(drat)3.77         NA
+factor(Transmission)Manual:factor(drat)3.85         NA
+factor(Transmission)Manual:factor(drat)3.9          NA
+factor(Transmission)Manual:factor(drat)3.92         NA
+factor(Transmission)Manual:factor(drat)4.08         NA
+factor(Transmission)Manual:factor(drat)4.11         NA
+factor(Transmission)Manual:factor(drat)4.22         NA
+factor(Transmission)Manual:factor(drat)4.43         NA
+factor(Transmission)Manual:factor(drat)4.93         NA
+                                            Std. Error
+(Intercept)                                  3.196e+00
+factor(Transmission)Manual                   5.535e+00
+factor(drat)2.93                             5.535e+00
+factor(drat)3                                5.535e+00
+factor(drat)3.07                             4.126e+00
+factor(drat)3.08                             4.520e+00
+factor(drat)3.15                             4.520e+00
+factor(drat)3.21                             5.535e+00
+factor(drat)3.23                             5.535e+00
+factor(drat)3.54                             6.392e+00
+factor(drat)3.62                             6.392e+00
+factor(drat)3.69                             5.535e+00
+factor(drat)3.7                              5.535e+00
+factor(drat)3.73                             5.535e+00
+factor(drat)3.77                             6.392e+00
+factor(drat)3.85                             6.392e+00
+factor(drat)3.9                              5.535e+00
+factor(drat)3.92                             4.126e+00
+factor(drat)4.08                             5.535e+00
+factor(drat)4.11                             6.392e+00
+factor(drat)4.22                             5.535e+00
+factor(drat)4.43                             6.392e+00
+factor(drat)4.93                                    NA
+factor(Transmission)Manual:factor(drat)2.93         NA
+factor(Transmission)Manual:factor(drat)3            NA
+factor(Transmission)Manual:factor(drat)3.07         NA
+factor(Transmission)Manual:factor(drat)3.08         NA
+factor(Transmission)Manual:factor(drat)3.15         NA
+factor(Transmission)Manual:factor(drat)3.21         NA
+factor(Transmission)Manual:factor(drat)3.23         NA
+factor(Transmission)Manual:factor(drat)3.54         NA
+factor(Transmission)Manual:factor(drat)3.62         NA
+factor(Transmission)Manual:factor(drat)3.69         NA
+factor(Transmission)Manual:factor(drat)3.7          NA
+factor(Transmission)Manual:factor(drat)3.73         NA
+factor(Transmission)Manual:factor(drat)3.77         NA
+factor(Transmission)Manual:factor(drat)3.85         NA
+factor(Transmission)Manual:factor(drat)3.9          NA
+factor(Transmission)Manual:factor(drat)3.92         NA
+factor(Transmission)Manual:factor(drat)4.08         NA
+factor(Transmission)Manual:factor(drat)4.11         NA
+factor(Transmission)Manual:factor(drat)4.22         NA
+factor(Transmission)Manual:factor(drat)4.43         NA
+factor(Transmission)Manual:factor(drat)4.93         NA
+                                            t value
+(Intercept)                                   5.257
+factor(Transmission)Manual                    2.457
+factor(drat)2.93                             -1.156
+factor(drat)3                                -1.156
+factor(drat)3.07                             -0.121
+factor(drat)3.08                              0.774
+factor(drat)3.15                              0.033
+factor(drat)3.21                             -0.452
+factor(drat)3.23                             -0.379
+factor(drat)3.54                             -2.409
+factor(drat)3.62                             -1.674
+factor(drat)3.69                              1.373
+factor(drat)3.7                               0.849
+factor(drat)3.73                             -0.632
+factor(drat)3.77                              0.000
+factor(drat)3.85                             -1.189
+factor(drat)3.9                              -1.698
+factor(drat)3.92                              0.759
+factor(drat)4.08                             -0.099
+factor(drat)4.11                             -1.408
+factor(drat)4.22                             -1.003
+factor(drat)4.43                             -0.688
+factor(drat)4.93                                 NA
+factor(Transmission)Manual:factor(drat)2.93      NA
+factor(Transmission)Manual:factor(drat)3         NA
+factor(Transmission)Manual:factor(drat)3.07      NA
+factor(Transmission)Manual:factor(drat)3.08      NA
+factor(Transmission)Manual:factor(drat)3.15      NA
+factor(Transmission)Manual:factor(drat)3.21      NA
+factor(Transmission)Manual:factor(drat)3.23      NA
+factor(Transmission)Manual:factor(drat)3.54      NA
+factor(Transmission)Manual:factor(drat)3.62      NA
+factor(Transmission)Manual:factor(drat)3.69      NA
+factor(Transmission)Manual:factor(drat)3.7       NA
+factor(Transmission)Manual:factor(drat)3.73      NA
+factor(Transmission)Manual:factor(drat)3.77      NA
+factor(Transmission)Manual:factor(drat)3.85      NA
+factor(Transmission)Manual:factor(drat)3.9       NA
+factor(Transmission)Manual:factor(drat)3.92      NA
+factor(Transmission)Manual:factor(drat)4.08      NA
+factor(Transmission)Manual:factor(drat)4.11      NA
+factor(Transmission)Manual:factor(drat)4.22      NA
+factor(Transmission)Manual:factor(drat)4.43      NA
+factor(Transmission)Manual:factor(drat)4.93      NA
+                                            Pr(>|t|)    
+(Intercept)                                  0.00037 ***
+factor(Transmission)Manual                   0.03385 *  
+factor(drat)2.93                             0.27447    
+factor(drat)3                                0.27447    
+factor(drat)3.07                             0.90594    
+factor(drat)3.08                             0.45660    
+factor(drat)3.15                             0.97418    
+factor(drat)3.21                             0.66116    
+factor(drat)3.23                             0.71233    
+factor(drat)3.54                             0.03672 *  
+factor(drat)3.62                             0.12506    
+factor(drat)3.69                             0.19975    
+factor(drat)3.7                              0.41569    
+factor(drat)3.73                             0.54137    
+factor(drat)3.77                             1.00000    
+factor(drat)3.85                             0.26188    
+factor(drat)3.9                              0.12032    
+factor(drat)3.92                             0.46510    
+factor(drat)4.08                             0.92281    
+factor(drat)4.11                             0.18942    
+factor(drat)4.22                             0.33967    
+factor(drat)4.43                             0.50685    
+factor(drat)4.93                                  NA    
+factor(Transmission)Manual:factor(drat)2.93       NA    
+factor(Transmission)Manual:factor(drat)3          NA    
+factor(Transmission)Manual:factor(drat)3.07       NA    
+factor(Transmission)Manual:factor(drat)3.08       NA    
+factor(Transmission)Manual:factor(drat)3.15       NA    
+factor(Transmission)Manual:factor(drat)3.21       NA    
+factor(Transmission)Manual:factor(drat)3.23       NA    
+factor(Transmission)Manual:factor(drat)3.54       NA    
+factor(Transmission)Manual:factor(drat)3.62       NA    
+factor(Transmission)Manual:factor(drat)3.69       NA    
+factor(Transmission)Manual:factor(drat)3.7        NA    
+factor(Transmission)Manual:factor(drat)3.73       NA    
+factor(Transmission)Manual:factor(drat)3.77       NA    
+factor(Transmission)Manual:factor(drat)3.85       NA    
+factor(Transmission)Manual:factor(drat)3.9        NA    
+factor(Transmission)Manual:factor(drat)3.92       NA    
+factor(Transmission)Manual:factor(drat)4.08       NA    
+factor(Transmission)Manual:factor(drat)4.11       NA    
+factor(Transmission)Manual:factor(drat)4.22       NA    
+factor(Transmission)Manual:factor(drat)4.43       NA    
+factor(Transmission)Manual:factor(drat)4.93       NA    
+---
+Signif. codes:  
+0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.52 on 10 degrees of freedom
+Multiple R-squared:  0.8186,	Adjusted R-squared:  0.4377 
+F-statistic: 2.149 on 21 and 10 DF,  p-value: 0.1061
+

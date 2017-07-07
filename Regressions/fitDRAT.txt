@@ -1,0 +1,19 @@
+
+Call:
+lm(formula = mpg ~ drat, data = dtCars)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-9.0775 -2.6803 -0.2095  2.2976  9.0225 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   -7.525      5.477  -1.374     0.18    
+drat           7.678      1.507   5.096 1.78e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.485 on 30 degrees of freedom
+Multiple R-squared:  0.464,	Adjusted R-squared:  0.4461 
+F-statistic: 25.97 on 1 and 30 DF,  p-value: 1.776e-05
+

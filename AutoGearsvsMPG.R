@@ -1,20 +1,23 @@
 MPGvsGearsAuto <- 
-        fitAutoGears <- lm(mpg ~ gears, dtAutoCars)
-
-        fitAutogears <- ggplot(dtAutoCars, aes(x = gears, 
+        fitAutoGears <- lm(mpg ~ factor(gears), dtAutoCars)
+        sink("Regressions/fitAutoGears.txt")
+        print(summary(fitAutoGears))
+        sink()
+ 
+        fitAutoGearsPlot <- ggplot(dtAutoCars, aes(x = gears, 
                                     y = mpg,
                                     fill = gears))
-        fitAutogears <- fitAutogears + geom_point(size = 3,
+        fitAutoGearsPlot <- fitAutoGearsPlot + geom_point(size = 3,
                                     shape=21,
                                     colour = "black")
-        fitAutogears <- fitAutogears + geom_abline(intercept = coef(fitAutogears)[1],
-                                slope = coef(fitAutogears)[2],
+        fitAutoGearsPlot <- fitAutoGearsPlot + geom_abline(intercept = coef(fitAutoGears)[1],
+                                slope = coef(fitAutoGears)[2],
                                 size = 1,
                                 color = "darkblue")
-        fitAutogears <- fitAutogears + labs(x = "Number of Forward Gears" ,
+        fitAutoGearsPlot <- fitAutoGearsPlot + labs(x = "Number of Forward Gears" ,
                                 y = "Miles Per Gallon (US)", 
                                 title = "Automatic Transmission # Forward Gears vs MPG")
-        fitAutogears <- fitAutogears + theme(plot.title=element_text(size=14, 
+        fitAutoGearsPlot <- fitAutoGearsPlot + theme(plot.title=element_text(size=14, 
                                                        hjust=0.5, 
                                                        face="bold", 
                                                        colour="darkorchid4", 
@@ -23,7 +26,9 @@ MPGvsGearsAuto <-
                                panel.background = element_blank(),
                                legend.position = "none")
         
-        #jpeg("fitAutogears.jpg")
-        plot(fitAutogears)
-        #dev.off()
+        jpeg("Plots/fitAutoGearsPlot.jpg")
+        plot(fitAutoGearsPlot)
+        dev.off()
+        
+        plot(fitAutoGearsPlot)
          

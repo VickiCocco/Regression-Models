@@ -1,0 +1,20 @@
+
+Call:
+lm(formula = drat ~ factor(gears), data = dtCars)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.37600 -0.14400 -0.06267  0.06933  0.88667 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      3.1327     0.0792  39.552  < 2e-16 ***
+factor(gears)4   0.9107     0.1188   7.665 1.88e-08 ***
+factor(gears)5   0.7833     0.1584   4.945 2.96e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.3068 on 29 degrees of freedom
+Multiple R-squared:  0.6921,	Adjusted R-squared:  0.6708 
+F-statistic: 32.59 on 2 and 29 DF,  p-value: 3.822e-08
+

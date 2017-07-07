@@ -1,0 +1,19 @@
+
+Call:
+lm(formula = mpg ~ Transmission, data = dt4Gears)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-5.2750 -3.8250 -0.4125  3.5437  7.6250 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          21.050      2.416   8.713 5.53e-06 ***
+TransmissionManual    5.225      2.959   1.766    0.108    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.832 on 10 degrees of freedom
+Multiple R-squared:  0.2377,	Adjusted R-squared:  0.1615 
+F-statistic: 3.118 on 1 and 10 DF,  p-value: 0.1079
+
