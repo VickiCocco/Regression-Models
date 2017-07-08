@@ -268,7 +268,7 @@ plot(fitAllGearsPlot)
 
 ```{r, echo = FALSE, message=TRUE, fig.width=3, fig.height=4, fig.align='center', fig.show='hold'}
 
-fitTransGears <- lm(mpg ~ Transmission + factor(gears), dtCars)
+fitTransGears <- lm(mpg ~ factor(gears), dtCars)
 plot(fitTransGears, which = 1)
 plot(fitTransGears, which = 2)
 
